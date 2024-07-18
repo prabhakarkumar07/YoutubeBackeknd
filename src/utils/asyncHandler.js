@@ -1,7 +1,9 @@
 const asyncHandler = (requestHandler) => {
-  (req, res, next) => {
+  return (req, res, next) => {
+    //use return for hider order for higher oreder function to return itself as  function
     Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err));
   };
+  retu;
 };
 
 export { asyncHandler };

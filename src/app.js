@@ -25,4 +25,13 @@ app.use(express.static("public"));
 
 app.use(cookieParser()); //to access web browser cookies
 
+//routers import
+import userRouter from "./routes/user.routes.js";
+
+//routes declarition
+
+app.use("/api/v1/users", userRouter);
+//it will create url
+//http://localhost:8000/api/v1/users/register
+
 export { app };
